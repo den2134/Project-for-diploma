@@ -129,6 +129,15 @@ a.desc:after {
     top: 0px;
 }
 
+#block2{
+    position: absolute;
+    background-color: #111;
+    height: 20px;
+    width: 40px;
+    left: 300px;
+    top: 370px;
+}
+
 #finish{
     position: absolute;
     background-color: #65ff53;

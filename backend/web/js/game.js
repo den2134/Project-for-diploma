@@ -1,5 +1,7 @@
 window.setInterval(function() {
-    collision($('#player'),$('#block1')) ? die($('#player')) : false;
+    for(var i=1; i<=2; i++) {
+        collision($('#player'), $('#block' + i)) ? die($('#player')) : false;
+    }
     collision($('#player'),$('#finish')) ? is_win() : false;
 }, 200);
 
@@ -75,33 +77,6 @@ function die(object){
 }
 
 function is_win(){
-    ($('#ground')).css({'background-color': 'green'});
+    $('#ground').css({'background-color': 'green'});
+    $('#btnNext').attr('type','button');
 }
-
-
-
-/*var colLeft = val.replace(/px/g,'');
- var colLeft = colLeft.replace(/\+=|-=/g,'');
-
- if(/\+=/.test(val)) {
- var colPlayerLeft = player.offset().left + parseInt(colLeft);
- var colPlayerTop = player.offset().top + parseInt(colLeft);
- }
- else {
- var colPlayerLeft = player.offset().left - parseInt(colLeft);
- var colPlayerTop = player.offset().top - parseInt(colLeft);
- }
-
- if(teg == 'left') {
- if (($('#block1').offset().left - $('#block1').outerWidth(true)) <= colPlayerLeft) {
- die(player);
- }
- }
- else(teg == 'top')
- {
- console.log($('#block1').offset().top + $('#block1').outerHeight(true));
- console.log(colPlayerTop);
- if (($('#block1').offset().top - $('#block1').outerHeight(true)) <= colPlayerTop) {
- die(player);
- }
- }*/
