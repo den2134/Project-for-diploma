@@ -9,7 +9,10 @@ class DefaultController extends Controller
 {
     public function actionIndex()
     {
-        return $this->render('index', ['model' => $this->getLevelId()]);
+        if(isset($_POST['DBgame']))
+            return $this->render('index', ['model' => $this->getLevelId($_POST['DBgame'])]);
+        else
+            return $this->render('index', ['model' => $this->getLevelId(1)]);
     }
 
     public function getLevelId($id = 1){
