@@ -46,4 +46,8 @@ class DBgame extends \yii\db\ActiveRecord
             'level_code' => 'Level Code',
         ];
     }
+
+    public static function getAll(){
+        return DBgame::find()->all();
+    }
 }

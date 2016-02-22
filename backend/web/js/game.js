@@ -1,8 +1,12 @@
-window.setInterval(function() {
+/*window.setInterval(function() {
     for(var i=1; i<=2; i++) {
         collision($('#player'), $('#block' + i)) ? die($('#player')) : false;
     }
     collision($('#player'),$('#finish')) ? is_win() : false;
+    collision($('#player'),$('.top')) ? die($('#player')) : false;
+    collision($('#player'),$('.bot')) ? die($('#player')) : false;
+    collision($('#player'),$('.left')) ? die($('#player')) : false;
+    collision($('#player'),$('.right')) ? die($('#player')) : false;
 }, 200);
 
 function done(){
@@ -21,10 +25,14 @@ function move(player, target){
     }
 
     for(var i=0; i<tVal.length; i++) {
-        var teg = tVal[i][0];
-        var val = tVal[i][1];
-
-        moveTo(player, teg, val);
+        var check = tVal[i][1].replace((/\+=|-=/),'');
+        if(parseInt(check) >= 300) {
+            check = 300;
+            moveTo(player, tVal[i][0], tVal[i][1].replace(/[0-9]+/,check));
+        }
+        else{
+            moveTo(player, tVal[i][0], tVal[i][1]);
+        }
     }
 }
 
@@ -64,12 +72,12 @@ function collision($div1, $div2) {
 }
 
 function die(object){
-    object.css({'background-color':'red','transition':'0.8s','left':'+=0'});
+    object.css({'background-color':'red','transition':'0.8s','left':'+=0px'});
     setTimeout(function() {
         object.animate({
             'transition':'0s',
-            left: '0px',
-            top: '0px',
+            left: '2px',
+            top: '2px',
         });
         object.css({'background-color': '#ffd4a8'});
     },800);
@@ -79,4 +87,7 @@ function die(object){
 function is_win(){
     $('#ground').css({'background-color': 'green'});
     $('#btnNext').attr('type','button');
+    return true;
 }
+
+    */

@@ -1,0 +1,44 @@
+#background{
+    float: none;
+    margin-left:auto;
+    margin-right: auto;
+    padding: 0;
+
+    height: 500px;
+    width: 100%;
+    max-height: 600px;
+    min-height: 200px;
+    background-color: #a9ff89;
+}
+
+#player_items{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+}
+
+#role_player{
+    position: absolute;
+    transition: 0.1s;
+    height: 50px;
+    width: 50px;
+}
+
+#sword_player{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+
+    float: none;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.obj{
+    height: 50px;
+    width: 50px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    background-color: #1b1b1a;
+}
