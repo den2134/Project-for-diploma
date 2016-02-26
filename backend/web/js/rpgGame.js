@@ -4,11 +4,12 @@
 
 window.setInterval(function() {
     moveEnemy($('.enemy'), $('#player_items'));
-    if(collision($('.obj'), $('.enemy')))
-        console.log('DONE');
+    if(collision($('.obj'), $('.enemy'))) {
+        $('.enemy').css('background-color','red');
+    }
     else
         console.log('NOPE');
-}, 1000);
+}, 100);
 
 $( document ).on( "mousemove", function( event ) {
     $( "#log" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY );

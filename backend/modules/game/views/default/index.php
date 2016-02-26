@@ -31,7 +31,9 @@ use backend\modules\game\models\DBgame;
         </div>
         <div class="form-group col-md-6 myform">
             <p class="main-scr">Sample code here</p>
-            <textarea type="text" class="form-control" id="scr" rows="5" name="user_scr" placeholder="Add script"></textarea>
+            <script>
+                <textarea type="text" class="form-control" id="scr" rows="5" name="user_scr" placeholder="Add script"></textarea>
+            </script>
             <input type="button" class="btn btn-success" name="sub" value="Done" onclick="done()">
             <?php $form = ActiveForm::begin(); ?>
             <div class="form-group">

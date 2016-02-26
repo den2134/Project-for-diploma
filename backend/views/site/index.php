@@ -10,7 +10,7 @@ $this->title = 'My Yii Application';
         <div class="btn-game">
             <p>Panel:</p>
             <?= Html::a('Create new level', ['/game/create'], ['class'=>'btn btn-default']) ?>
-            <?= Html::a('Debug game', ['/game/'], ['class'=>'btn btn-default']) ?>
+            <?= Html::a('Debug game', ['/play/'], ['class'=>'btn btn-default']) ?>
         </div>
     </div>
 </div>

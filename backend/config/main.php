@@ -18,6 +18,9 @@ return [
         'RPG' => [
             'class' => 'backend\modules\RPG\SetRpg',
         ],
+        'play' => [
+            'class' => 'backend\modules\play\SetPlay',
+        ],
     ],
     'components' => [
         'user' => [
