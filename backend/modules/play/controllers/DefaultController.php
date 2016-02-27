@@ -4,7 +4,6 @@ namespace backend\modules\play\controllers;
 
 use yii\base\Model;
 use yii\web\Controller;
-use backend\modules\play\models\Text;
 use yii\db\Expression;
 use yii\db\Query;
 

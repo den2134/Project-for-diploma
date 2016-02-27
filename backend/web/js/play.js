@@ -29,6 +29,7 @@ function validateAsYouType(inputElementId)
     var text1 =  $('#text-main').text();
     console.log('Text: '+ $('#text-main').text());
     var val = inputElementId.value;
+
     if(val.length <= text1.length && val == text1.substr(0, val.length)){
         document.getElementById("text-inp").style.color="blue";
         animateTo($('#car'),2);
