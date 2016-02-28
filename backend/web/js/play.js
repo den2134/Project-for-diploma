@@ -27,7 +27,6 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 function validateAsYouType(inputElementId)
 {
     var text1 =  $('#text-main').text();
-    console.log('Text: '+ $('#text-main').text());
     var val = inputElementId.value;
 
     if(val.length <= text1.length && val == text1.substr(0, val.length)){
