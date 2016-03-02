@@ -201,3 +201,14 @@ li{
     font-size: 19px;
     color: red;
 }
+
+.btn-next{
+    text-align: center;
+    background-color: #57a94f;
+    transition: 0.5s;
+}
+.btn-next:hover{
+    background-color: #77dd63;
+    color: #4b4b4b;
+    transition: 1s;
+}

@@ -17,6 +17,8 @@ use yii\web\IdentityInterface;
  * @property string $email
  * @property string $auth_key
  * @property integer $status
+ * @property integer $role
+ * @property float   $best_result
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
@@ -65,6 +67,15 @@ class User extends ActiveRecord implements IdentityInterface
     public static function findIdentity($id)
     {
         return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+
+    public static function findTime($id){
+        return static::find()->select('best_result')->where(['id' => $id])->column()[0];
     }
 
     /**

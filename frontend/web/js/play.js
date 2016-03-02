@@ -2,7 +2,6 @@ $(document).ready(function(){
     setGame();
     $('#text-inp').one( "click", function() {
         a = Date.now();
-        $('#time').text(a);
     });
 });
 
@@ -23,20 +22,20 @@ function validateAsYouType(inputElementId)
         $('#text-main').html($('#text-main').text().replace(text1.substr(0, val.length), txt_grn));
         animateTo($('#car'),-2);
     }
-    if( val ==  text1)
+    if(val == text1)
     {
         $('#text-inp').css('color', '#339933')
         document.getElementById("text-inp").disabled = true;
+        $('#update').css('visibility','visible');
         var b = Date.now();
         $('#time').text((b-a)/1000);
-        $('#coef').text(setCoef($('#car'), $('#end')));
     }
 }
 
 function setGame(){
     $('#road').append('<div id="end"></div>');
     var length = $('#text-main').text().length;
-    animateTo($('#end'),(length*2)+10);
+    animateTo($('#end'),(length*2)+8);
 }
 
 function animateTo(mover, pix){
@@ -45,7 +44,12 @@ function animateTo(mover, pix){
     },10);
 }
 
-function setCoef(fpos, lpos){
-    var coef = lpos.offset().left - fpos.offset().left;
-    return coef+18;
+document.onkeyup = function (e) {
+    e = e || window.event;
+    if (e.keyCode === 13) {
+        updatePage();
+    }
+    return false;
 }
+
+

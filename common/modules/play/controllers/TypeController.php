@@ -5,6 +5,8 @@ namespace common\modules\play\controllers;
 use yii\web\Controller;
 use yii\db\Expression;
 use yii\db\Query;
+use Yii;
+use common\models\User;
 
 class TypeController extends Controller
 {
@@ -28,7 +30,19 @@ class TypeController extends Controller
             $text .= $arr[$rand_key[$i]] . ' ';
 
         $text = rtrim($text, ' ');
-        return $this->render('words', ['text' => $text]);
+
+        $time = User::findTime(Yii::$app->user->identity->id);
+
+        return $this->render('words', ['text' => $text, 'time' => $time]);
+    }
+
+    public function actionSave(){
+        if (Yii::$app->request->isAjax) {
+            $data = Yii::$app->request->post();
+            $model = User::findOne(Yii::$app->user->identity->id);
+            $model->best_result = $data['val'];
+            $model->save();
+        }
     }
 
     /**
