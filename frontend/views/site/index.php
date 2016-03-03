@@ -1,4 +1,7 @@
 <?php
+//$this->registerJsFile('js/jquery.firefly-0.5.js', ['yii\web\JqueryAsset']);
+$this->registerJsFile('yii\web\JqueryAsset');
+$this->registerJsFile('js/jquery.firefly-0.5.js');
 
 /* @var $this yii\web\View */
 

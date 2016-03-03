@@ -19,7 +19,7 @@
                     \yii\bootstrap\Modal::begin([
                         'header' => '<h4>Таблица лидеров</h4>',
                         'id' => 'modal',
-                        'size' => 'modal-lg'
+                        'size' => 'modal-md'
                     ]);
                     echo "<div id='modalContent'></div>";
                 \yii\bootstrap\Modal::end();

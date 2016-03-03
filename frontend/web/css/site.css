@@ -108,10 +108,7 @@ body {
     margin-bottom: 50px;
     background: none;
     color: white;
-}
-
-.full {
-    background: url(/frontend/web/img/pictures-originals-2015-Nature_Mighty_trees_form_an_arch_over_the_road_102288_.jpg) no-repeat center center fixed;
+    background: url(/frontend/web/img/fon1.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -152,6 +149,14 @@ li{
     font-size: 16px;
     text-align: center;
     text-shadow: 0 2px 8px rgba(0,0,0,1);
+}
+
+.navbar-collapse> ul > li > a{
+    color: #fff;
+}
+.navbar-collapse> ul > li > a:hover{
+    transition: 0.2s;
+    color: #0c0c0c;
 }
 /* CSS FOR PLAY */
 #road{
