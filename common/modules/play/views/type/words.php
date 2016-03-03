@@ -14,6 +14,16 @@
                 </div>
                 <p>Лучшее время: <span id="best_time"><?= $time ?></span></p>
                 <p>Текущее время:<span id="time"></span></p>
+                <?= \yii\bootstrap\Html::button('Таблица лидеров', ['value' => \yii\helpers\Url::to('index.php?r=play/type/table'), 'class' => 'btn btn-default', 'id' => 'modalButton']);?>
+                <?php
+                    \yii\bootstrap\Modal::begin([
+                        'header' => '<h4>Таблица лидеров</h4>',
+                        'id' => 'modal',
+                        'size' => 'modal-lg'
+                    ]);
+                    echo "<div id='modalContent'></div>";
+                \yii\bootstrap\Modal::end();
+                ?>
             </div>
         </div>
     </div>

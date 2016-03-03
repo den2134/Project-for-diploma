@@ -212,3 +212,8 @@ li{
     color: #4b4b4b;
     transition: 1s;
 }
+
+/* CSS for POP UP*/
+.modal-content{
+    color: #1a1a1a;
+}

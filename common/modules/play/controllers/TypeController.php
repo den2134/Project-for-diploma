@@ -36,6 +36,10 @@ class TypeController extends Controller
         return $this->render('words', ['text' => $text, 'time' => $time]);
     }
 
+    /**
+     * Сохранение лучшего результата в базу
+     */
+
     public function actionSave(){
         if (Yii::$app->request->isAjax) {
             $data = Yii::$app->request->post();
@@ -43,6 +47,31 @@ class TypeController extends Controller
             $model->best_result = $data['val'];
             $model->save();
         }
+    }
+
+    /**
+     * Вывод списка лидеров
+     * @return string
+     */
+
+    public function actionTable(){
+        $leaders = $this->tableLeaders();
+
+        return $this->renderAjax('table',['leaders' => $leaders]);
+    }
+
+    /**
+     * @return array
+     */
+
+    public function tableLeaders($lim = 10){
+        $model = (new Query())
+            ->select(['username', 'best_result'])
+            ->from('user')
+            ->orderBy(['best_result' => SORT_ASC])
+            ->limit($lim)->all();
+
+        return $model;
     }
 
     /**
