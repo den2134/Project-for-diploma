@@ -1,8 +1,5 @@
 $(document).ready(function(){
     setGame();
-    $('#text-inp').one( "click", function() {
-        a = Date.now();
-    });
 });
 
 function validateAsYouType(inputElementId)
@@ -28,14 +25,26 @@ function validateAsYouType(inputElementId)
         document.getElementById("text-inp").disabled = true;
         $('#update').css('visibility','visible');
         var b = Date.now();
+        $('#result').append('<p id="pTime">Текущее время:<span id="time"></span></p>');
         $('#time').text((b-a)/1000);
     }
 }
 
 function setGame(){
+    $('#pTime').remove();
+    if($('#end').length){
+        $('#end').remove();
+        $('#car').remove();
+    }
     $('#road').append('<div id="end"></div>');
+    $('#road').append('<div id="car"></div>');
     var length = $('#text-main').text().length;
     animateTo($('#end'),(length*2)+8);
+
+    $('#text-inp').one( "click", function() {
+        a = Date.now();
+    });
+
 }
 
 function animateTo(mover, pix){
