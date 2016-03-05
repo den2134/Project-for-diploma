@@ -181,11 +181,12 @@ li{
     background-color: #339422;
 }
 
+.text-block{
+    background-color: rgba(36, 36, 36, 0.94);
+}
+
 #text-main{
-    height: 120px;
-    padding: 10px;
-    line-height: 25px;
-    background-color: #323232;
+    padding: 8px;
     font-size: 18px;
 }
 

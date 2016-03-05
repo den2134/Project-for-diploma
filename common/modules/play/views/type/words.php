@@ -1,6 +1,8 @@
 <div class="play-default-index">
     <div class="col-md-12 col-lg-12 col-sm-12">
-        <p id="text-main"><?= $text ?></p>
+        <div class="text-block">
+            <p id="text-main"><?= $text ?></p>
+        </div>
         <label>Вводите текст:</label><br>
         <textarea class="form-control area-inp" name="text" id="text-inp" onkeyup='return validateAsYouType(this);' cols="0" rows="0"></textarea>
         <div class="col-md-12" id="road">
@@ -29,9 +31,9 @@
     </div>
 </div>
 <script>
-    function updatePage(){
-        if($('#text-inp').is(':disabled')){
-            if($('#best_time').text() > $('#time').text()) {
+    function updatePage() {
+        if ($('#text-inp').is(':disabled')) {
+            if ($('#best_time').text() > $('#time').text()) {
                 $.ajax({
                     url: "<?php echo \Yii::$app->getUrlManager()->createUrl('play/type/save') ?>",
                     type: 'POST',
@@ -43,9 +45,14 @@
                     }
                 });
             }
-            location.reload();
         }
-        else
-            location.reload();
+        $.ajax({
+            url: "<?php echo \Yii::$app->getUrlManager()->createUrl('play/type/set') ?>",
+            type: 'POST',
+            success: function (data) {
+                //alert(data);
+                $('#text-main').text(data);
+            }
+        });
     }
 </script>

@@ -3,13 +3,6 @@ $(document).ready(function(){
     $('#text-inp').one( "click", function() {
         a = Date.now();
     });
-    $.firefly({
-        color: 'rgba(187, 185, 255, 0.85)',
-        minPixel: 1,
-        maxPixel: 2,
-        total : 80,
-        on: '.bg-type'
-    });
 });
 
 function validateAsYouType(inputElementId)

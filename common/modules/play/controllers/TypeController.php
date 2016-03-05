@@ -16,6 +16,28 @@ class TypeController extends Controller
 
     public function actionWords()
     {
+        $text = $this->setWords();
+
+        $time = User::findTime(Yii::$app->user->identity->id);
+
+        return $this->render('words', ['text' => $text, 'time' => $time]);
+    }
+
+    /**
+     * AJAX обновление слов
+     */
+
+    public function actionSet(){
+        if(Yii::$app->request->isAjax){
+            return $this->setWords();
+        }
+    }
+
+    /**
+     * @return string
+     */
+
+    public function setWords(){
         $model = (new Query())
             ->select(['string'])
             ->from('word')
@@ -31,9 +53,7 @@ class TypeController extends Controller
 
         $text = rtrim($text, ' ');
 
-        $time = User::findTime(Yii::$app->user->identity->id);
-
-        return $this->render('words', ['text' => $text, 'time' => $time]);
+        return $text;
     }
 
     /**
